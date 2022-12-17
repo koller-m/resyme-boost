@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>This is working</div>;
+  return <h1 className="underline">Resyme Boost</h1>;
 }
