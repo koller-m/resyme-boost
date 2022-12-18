@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Resyme Boost | Something goes here</title>
+        <title>Resyme Boost</title>
       </Head>
       <ResymeBoost />
     </div>
