@@ -5,14 +5,17 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-const basePromptPrefix = "";
+const basePromptPrefix =
+  "Create a professional resume summary for the job using experience from my resume";
 const generateAction = async (req, res) => {
   // Run first prompt
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
+  console.log(
+    `API: ${basePromptPrefix}${req.body.resume}${req.body.userInput}`
+  );
 
   const baseCompletion = await openai.createCompletion({
-    model: "text-curie-001",
-    prompt: `${basePromptPrefix}${req.body.userInput}`,
+    model: "text-davinci-003",
+    prompt: `${basePromptPrefix}${req.body.resume}${req.body.userInput}`,
     temperature: 0.7,
     max_tokens: 250,
   });
